@@ -3,17 +3,16 @@ import random
 from app.Card import Card
 
 
-class Deck:
-    cards: list[Card] = []
-    DUPLICATE_VALUES_PER_DECK: int = 1
+class Deck(object):
+    cards: list[Card]
     SHUFFLE_PASSES: int = 7
 
-    def __init__(self):
+    def __init__(self, number_suits: int = 4):
+        self.cards = []
         for card in list(Card):
-            for i in range(self.DUPLICATE_VALUES_PER_DECK):
+            for i in range(number_suits):
+                print(f'  adding {card}')
                 self.cards.append(card)
-
-        # self.shuffle()
 
     def shuffle(self):
         for pazz in range(self.SHUFFLE_PASSES):
@@ -28,6 +27,7 @@ class Deck:
         for card in self.cards:
             deck += card.as_string()
         deck += ')'
+        return deck
 
     def print(self):
         print(self.as_string())
