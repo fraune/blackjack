@@ -11,7 +11,8 @@ class Dealer(Player):
 
     def draw_cards(self):
         """
-        Dealer cheats and draws cards until the next card would cause bust
+        Dealer cheats and draws cards until the next card would cause bust.
+        Dealer is flawed in that it will hit on 20 with an ace scored as 11
         :return:
         """
         while not self.round_over:
