@@ -1,6 +1,7 @@
 import random
 
 from app.Card import Card
+from app.utility.logging import v
 
 
 class Deck(object):
@@ -30,4 +31,4 @@ class Deck(object):
         return deck
 
     def print(self):
-        print(self.as_string())
+        v(self.as_string())
