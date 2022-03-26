@@ -6,10 +6,19 @@ from app.Deck import Deck
 class TestDeck(TestCase):
 
     def test_init_deck_size(self):
+        # Arrange
+        expected = 52
         deck1 = Deck()
-        assert len(deck1.cards) == 52
+        # Act
+        actual = len(deck1.cards)
+        # Assert
+        assert actual == expected
 
     def test_init_deck_order(self):
+        # Arrange
+        expected = '([ACE][TWO][THREE][FOUR][FIVE][SIX][SEVEN][EIGHT][NINE][TEN][JACK][QUEEN][KING])'
         deck = Deck(1)
-        printout = deck.as_string()
-        assert printout == '([ACE][TWO][THREE][FOUR][FIVE][SIX][SEVEN][EIGHT][NINE][TEN][JACK][QUEEN][KING])'
+        # Act
+        actual = deck.as_string()
+        # Assert
+        assert actual == expected
