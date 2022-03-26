@@ -8,7 +8,7 @@ class Hand:
     def __init__(self):
         self.cards = []
 
-    def deal_card(self, card_to_add: Card):
+    def add_card(self, card_to_add: Card):
         self.cards.append(card_to_add)
 
     def score_hand(self) -> int:
