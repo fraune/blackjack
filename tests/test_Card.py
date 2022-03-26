@@ -1,15 +1,15 @@
 from unittest import TestCase
 
-from app.Card import Card
+from app.Card import Pip
 
 
-class TestCard(TestCase):
+class TestPip(TestCase):
 
     def test_as_points_low(self):
         # Arrange
         expected = 5
         # Act
-        actual = Card.FIVE.as_points()
+        actual = Pip.FIVE.as_points()
         # Assert
         assert actual == expected
 
@@ -17,7 +17,7 @@ class TestCard(TestCase):
         # Arrange
         expected = 10
         # Act
-        actual = Card.JACK.as_points()
+        actual = Pip.JACK.as_points()
         # Assert
         assert actual == expected
 
@@ -25,7 +25,7 @@ class TestCard(TestCase):
         # Arrange
         expected = 1
         # Act
-        actual = Card.ACE.as_points(11)
+        actual = Pip.ACE.as_points(11)
         # Assert
         assert actual == expected
 
@@ -33,6 +33,6 @@ class TestCard(TestCase):
         # Arrange
         expected = 11
         # Act
-        actual = Card.ACE.as_points(10)
+        actual = Pip.ACE.as_points(10)
         # Assert
         assert actual == expected

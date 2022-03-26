@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from app.Card import Card
+from app.Card import Pip, Card
 from app.Hand import Hand
 
 
@@ -10,7 +10,7 @@ class TestHand(TestCase):
         # Arrange
         expected = 2
         hand = Hand()
-        hand.deal_card(Card.TWO)
+        hand.deal_card(Card(Pip.TWO))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -20,8 +20,8 @@ class TestHand(TestCase):
         # Arrange
         expected = 4
         hand = Hand()
-        hand.deal_card(Card.TWO)
-        hand.deal_card(Card.TWO)
+        hand.deal_card(Card(Pip.TWO))
+        hand.deal_card(Card(Pip.TWO))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -31,8 +31,8 @@ class TestHand(TestCase):
         # Arrange
         expected = 17
         hand = Hand()
-        hand.deal_card(Card.SEVEN)
-        hand.deal_card(Card.KING)
+        hand.deal_card(Card(Pip.SEVEN))
+        hand.deal_card(Card(Pip.KING))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -42,9 +42,9 @@ class TestHand(TestCase):
         # Arrange
         expected = 22
         hand = Hand()
-        hand.deal_card(Card.SEVEN)
-        hand.deal_card(Card.KING)
-        hand.deal_card(Card.FIVE)
+        hand.deal_card(Card(Pip.SEVEN))
+        hand.deal_card(Card(Pip.KING))
+        hand.deal_card(Card(Pip.FIVE))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -54,9 +54,9 @@ class TestHand(TestCase):
         # Arrange
         expected = 18
         hand = Hand()
-        hand.deal_card(Card.SEVEN)
-        hand.deal_card(Card.ACE)
-        hand.deal_card(Card.KING)
+        hand.deal_card(Card(Pip.SEVEN))
+        hand.deal_card(Card(Pip.ACE))
+        hand.deal_card(Card(Pip.KING))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -66,8 +66,8 @@ class TestHand(TestCase):
         # Arrange
         expected = 18
         hand = Hand()
-        hand.deal_card(Card.SEVEN)
-        hand.deal_card(Card.ACE)
+        hand.deal_card(Card(Pip.SEVEN))
+        hand.deal_card(Card(Pip.ACE))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -77,8 +77,8 @@ class TestHand(TestCase):
         # Arrange
         expected = 12
         hand = Hand()
-        hand.deal_card(Card.ACE)
-        hand.deal_card(Card.ACE)
+        hand.deal_card(Card(Pip.ACE))
+        hand.deal_card(Card(Pip.ACE))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -88,8 +88,8 @@ class TestHand(TestCase):
         # Arrange
         expected = 21
         hand = Hand()
-        hand.deal_card(Card.JACK)
-        hand.deal_card(Card.ACE)
+        hand.deal_card(Card(Pip.JACK))
+        hand.deal_card(Card(Pip.ACE))
         # Act
         actual = hand.score_hand()
         # Assert
@@ -99,9 +99,9 @@ class TestHand(TestCase):
         # Arrange
         expected = 12
         hand = Hand()
-        hand.deal_card(Card.QUEEN)
-        hand.deal_card(Card.ACE)
-        hand.deal_card(Card.ACE)
+        hand.deal_card(Card(Pip.QUEEN))
+        hand.deal_card(Card(Pip.ACE))
+        hand.deal_card(Card(Pip.ACE))
         # Act
         actual = hand.score_hand()
         # Assert

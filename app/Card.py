@@ -3,7 +3,7 @@ from enum import Enum
 from app.utility.logging import e
 
 
-class Card(Enum):
+class Pip(Enum):
     ACE = 1
     TWO = 2
     THREE = 3
@@ -20,31 +20,46 @@ class Card(Enum):
 
     def as_points(self, subtotal: int = 0):
         match self:
-            case Card.ACE:
+            case Pip.ACE:
                 if subtotal > 10:
                     return 1
                 else:
                     return 11
-            case Card.TWO:
+            case Pip.TWO:
                 return 2
-            case Card.THREE:
+            case Pip.THREE:
                 return 3
-            case Card.FOUR:
+            case Pip.FOUR:
                 return 4
-            case Card.FIVE:
+            case Pip.FIVE:
                 return 5
-            case Card.SIX:
+            case Pip.SIX:
                 return 6
-            case Card.SEVEN:
+            case Pip.SEVEN:
                 return 7
-            case Card.EIGHT:
+            case Pip.EIGHT:
                 return 8
-            case Card.NINE:
+            case Pip.NINE:
                 return 9
-            case Card.TEN | Card.JACK | Card.QUEEN | Card.KING:
+            case Pip.TEN | Pip.JACK | Pip.QUEEN | Pip.KING:
                 return 10
             case _:
                 e(f'An unknown card type was found: {self}')
 
     def as_string(self):
         return f'[{self.name}]'
+
+
+class Card:
+    pip: Pip
+    score: int
+
+    def __init__(self, pip: Pip):
+        self.pip = pip
+        self.score = 0
+
+    def update_score(self, hand_subtotal: int):
+        old_score = self.score
+        new_score = self.pip.as_points(hand_subtotal)
+        self.score = new_score
+        return new_score - old_score
