@@ -6,7 +6,7 @@ from app.Hand import Hand
 
 class TestHand(TestCase):
 
-    def test_count_hand_1(self):
+    def test_score_hand_1(self):
         # Arrange
         expected = 2
         hand = Hand()
@@ -16,7 +16,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_2(self):
+    def test_score_hand_2(self):
         # Arrange
         expected = 4
         hand = Hand()
@@ -27,7 +27,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_3(self):
+    def test_score_hand_3(self):
         # Arrange
         expected = 17
         hand = Hand()
@@ -38,7 +38,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_4(self):
+    def test_score_hand_4(self):
         # Arrange
         expected = 22
         hand = Hand()
@@ -50,7 +50,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_5(self):
+    def test_score_hand_5(self):
         # Arrange
         expected = 18
         hand = Hand()
@@ -62,7 +62,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_6(self):
+    def test_score_hand_6(self):
         # Arrange
         expected = 18
         hand = Hand()
@@ -73,7 +73,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_7(self):
+    def test_score_hand_7(self):
         # Arrange
         expected = 12
         hand = Hand()
@@ -84,7 +84,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_8(self):
+    def test_score_hand_8(self):
         # Arrange
         expected = 21
         hand = Hand()
@@ -95,7 +95,7 @@ class TestHand(TestCase):
         # Assert
         assert actual == expected
 
-    def test_count_hand_9(self):
+    def test_score_hand_9(self):
         # Arrange
         expected = 12
         hand = Hand()

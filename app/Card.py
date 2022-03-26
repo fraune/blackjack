@@ -54,7 +54,8 @@ class Card:
 
     def __init__(self, pip: Pip):
         self.pip = pip
-        self.score = 0
+        self.score = self.pip.as_points()
+        self.ace_high = True
 
     def update_score(self, hand_subtotal: int):
         """
@@ -62,15 +63,9 @@ class Card:
         :param hand_subtotal: The subtotal of the other cards; affects the score of aces only
         :return: Amount that this card's value has changed
         """
-        initial_score = self.score
-
-        if self.score == 0:
-            self.score = self.pip.as_points()
-
+        updated_by = 0
         if self.pip == Pip.ACE and hand_subtotal > 21 and self.ace_high:
             self.score = 1
             self.ace_high = False
-
-        new_score = self.score
-        difference = new_score - initial_score
-        return difference
+            updated_by = -10
+        return updated_by

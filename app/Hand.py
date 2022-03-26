@@ -1,3 +1,5 @@
+from typing import Tuple
+
 from app.Card import Card
 from app.utility.logging import v
 
@@ -12,17 +14,18 @@ class Hand:
         self.cards.append(card_to_add)
 
     def score_hand(self) -> int:
-        # Count all cards, but count aces last
-        score = 0
         while True:
-            updated = False
+            score = 0
             for card in self.cards:
-                update = card.update_score(score)
-                if update != 0:
-                    updated = True
-                    score += update
-            if not updated:
+                score += card.score
+
+            new_score = score
+            for card in self.cards:
+                new_score += card.update_score(new_score)
+
+            if score == new_score:
                 break
+
         return score
 
     def as_string(self):
