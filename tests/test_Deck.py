@@ -8,9 +8,10 @@ class TestDeck(TestCase):
     def test_init_deck_size(self):
         # Arrange
         expected = 52
-        deck1 = Deck()
+        deck = Deck()
+        deck.reset()
         # Act
-        actual = len(deck1.cards)
+        actual = len(deck.cards)
         # Assert
         assert actual == expected
 
@@ -18,6 +19,7 @@ class TestDeck(TestCase):
         # Arrange
         expected = '([ACE][TWO][THREE][FOUR][FIVE][SIX][SEVEN][EIGHT][NINE][TEN][JACK][QUEEN][KING])'
         deck = Deck(1)
+        deck.reset()
         # Act
         actual = deck.as_string()
         # Assert
@@ -26,7 +28,9 @@ class TestDeck(TestCase):
     def test_unshuffled_decks_equivalent_order(self):
         # Arrange
         deck_unshuffled_1 = Deck()
+        deck_unshuffled_1.reset()
         deck_unshuffled_2 = Deck()
+        deck_unshuffled_2.reset()
         # Assert
         assert deck_unshuffled_2.as_string() == deck_unshuffled_1.as_string()
 
@@ -36,7 +40,9 @@ class TestDeck(TestCase):
         """
         # Arrange
         deck_unshuffled = Deck()
+        deck_unshuffled.reset()
         deck_shuffled = Deck()
+        deck_shuffled.reset()
         # Act
         deck_shuffled.shuffle()
         # Assert
