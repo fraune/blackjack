@@ -1,6 +1,7 @@
 import copy
 
 from app.Player import Player
+from app.utility.logging import w
 
 
 class Dealer(Player):
@@ -15,9 +16,16 @@ class Dealer(Player):
         """
         while not self.round_over:
             hypothetical_hand = copy.deepcopy(self.hand)
-            hypothetical_hand.add_card(self.shared_deck.peek_top_card())
-
-            if hypothetical_hand.score_hand() > 21:
+            try:
+                hypothetical_hand.add_card(self.shared_deck.peek_top_card())
+                hypothetical_score = hypothetical_hand.score_hand()
+                if hypothetical_score > 21:
+                    self.round_over = True
+                elif hypothetical_score == 21:
+                    self.hand.add_card(self.shared_deck.take_top_card())
+                    self.round_over = True
+                else:
+                    self.hand.add_card(self.shared_deck.take_top_card())
+            except IndexError:
+                w("Ran out of cards")
                 self.round_over = True
-            else:
-                self.hand.add_card(self.shared_deck.take_top_card())
