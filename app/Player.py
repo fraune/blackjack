@@ -17,6 +17,11 @@ class Player:
         self.hand.reset()
         self.round_over = False
 
+    def deal_first_two_cards(self):
+        self.hand.add_card(self.shared_deck.take_top_card())
+        self.hand.add_card(self.shared_deck.take_top_card())
+        # TODO: score and end round immediately if 21?
+
     def hit(self):
         if self.round_over:
             raise RoundOverException

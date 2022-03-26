@@ -48,3 +48,15 @@ class TestPlayer(TestCase):
         # Assert
         assert player.round_over is False
         assert player.hand.score_hand() == 0
+
+    def test_deal_first_two_cards(self):
+        # Arrange
+        deck = Deck()
+        deck.cards = [Card(Pip.ACE), Card(Pip.JACK)]
+        player = Player(deck)
+        # Act
+        player.deal_first_two_cards()
+        # Assert
+        assert player.round_over is False
+        assert player.hand.score_hand() == 21
+        assert len(player.hand.cards) == 2
