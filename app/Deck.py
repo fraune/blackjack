@@ -4,7 +4,7 @@ from app.Card import Pip, Card
 from app.utility.logging import v
 
 
-class Deck(object):
+class Deck:
     _SHUFFLE_PASSES: int = 7
     number_suits: int
     cards: list[Card]
