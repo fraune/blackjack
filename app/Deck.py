@@ -16,11 +16,11 @@ class Deck(object):
 
     def shuffle(self):
         for pazz in range(self.SHUFFLE_PASSES):
-            i = random.randint(0, len(Card))
-            j = random.randint(0, len(Card))
-            aside = self.cards[i]
-            self.cards[i] = self.cards[j]
-            self.cards[j] = aside
+            first = random.randint(0, len(Card))
+            second = random.randint(0, len(Card))
+            aside = self.cards[first]
+            self.cards[first] = self.cards[second]
+            self.cards[second] = aside
 
     def as_string(self):
         deck = '('
