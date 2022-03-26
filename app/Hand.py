@@ -6,6 +6,9 @@ class Hand:
     cards: list[Card]
 
     def __init__(self):
+        self.reset()
+
+    def reset(self):
         self.cards = []
 
     def add_card(self, card_to_add: Card):
