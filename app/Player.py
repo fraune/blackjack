@@ -12,7 +12,8 @@ class Player:
         self.shared_deck = deck
         self.hand = Hand()
 
-    def start_round(self):
+    def reset_round(self):
+        # TODO: Reset Deck
         self.hand.reset()
         self.round_over = False
 
