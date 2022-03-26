@@ -1,5 +1,3 @@
-from typing import Tuple
-
 from app.Card import Card
 from app.utility.logging import v
 
