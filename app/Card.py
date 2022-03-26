@@ -18,13 +18,10 @@ class Pip(Enum):
     QUEEN = 12
     KING = 13
 
-    def as_points(self, subtotal: int = 0):
+    def as_points(self):
         match self:
             case Pip.ACE:
-                if subtotal > 10:
-                    return 1
-                else:
-                    return 11
+                return 11
             case Pip.TWO:
                 return 2
             case Pip.THREE:
@@ -53,13 +50,27 @@ class Pip(Enum):
 class Card:
     pip: Pip
     score: int
+    ace_high: bool = True
 
     def __init__(self, pip: Pip):
         self.pip = pip
         self.score = 0
 
     def update_score(self, hand_subtotal: int):
-        old_score = self.score
-        new_score = self.pip.as_points(hand_subtotal)
-        self.score = new_score
-        return new_score - old_score
+        """
+        Update this card's score, and return the amount it was changed by
+        :param hand_subtotal: The subtotal of the other cards; affects the score of aces only
+        :return: Amount that this card's value has changed
+        """
+        initial_score = self.score
+
+        if self.score == 0:
+            self.score = self.pip.as_points()
+
+        if self.pip == Pip.ACE and hand_subtotal > 21 and self.ace_high:
+            self.score = 1
+            self.ace_high = False
+
+        new_score = self.score
+        difference = new_score - initial_score
+        return difference
