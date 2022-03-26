@@ -1,7 +1,5 @@
 from enum import Enum
 
-from app.utility.logging import e
-
 
 class Pip(Enum):
     ACE = 1
@@ -40,8 +38,6 @@ class Pip(Enum):
                 return 9
             case Pip.TEN | Pip.JACK | Pip.QUEEN | Pip.KING:
                 return 10
-            case _:
-                e(f'An unknown card type was found: {self}')
 
     def as_string(self):
         return f'[{self.name}]'
