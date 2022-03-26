@@ -6,7 +6,7 @@ from app.utility.exceptions import RoundOverException
 class Player:
     shared_deck: Deck
     hand: Hand
-    round_over: bool
+    round_over: bool = False
 
     def __init__(self, deck: Deck):
         self.shared_deck = deck
