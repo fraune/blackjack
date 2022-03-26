@@ -67,7 +67,7 @@ class TestDealer(TestCase):
         assert dealer.hand.score_hand() == 20
         assert len(dealer.hand.cards) == 5
 
-    def test_draw_cards_converts_ace_for_20_stops(self):
+    def test_draw_cards_converts_only_one_ace(self):
         # Arrange
         deck = Deck()
         deck.cards = [Card(Pip.TWO), Card(Pip.TWO), Card(Pip.ACE), Card(Pip.NINE), Card(Pip.ACE)]
@@ -79,7 +79,7 @@ class TestDealer(TestCase):
         assert dealer.hand.score_hand() == 21
         assert len(dealer.hand.cards) == 3
 
-    def test_draw_cards_converts_ace_for_20_stops(self):
+    def test_draw_cards_hits_until_before_bust_even_on_20(self):
         # Arrange
         deck = Deck()
         deck.cards = [Card(Pip.TEN), Card(Pip.TWO), Card(Pip.FOUR), Card(Pip.FIVE), Card(Pip.ACE)]
