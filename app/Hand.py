@@ -11,7 +11,7 @@ class Hand:
     def deal_card(self, card_to_add: Card):
         self.cards.append(card_to_add)
 
-    def count_hand(self) -> int:
+    def score_hand(self) -> int:
         # Count all cards, but count aces last
         score = 0
         for card in self.cards:

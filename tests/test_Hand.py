@@ -12,7 +12,7 @@ class TestHand(TestCase):
         hand = Hand()
         hand.deal_card(Card.TWO)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -23,7 +23,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.TWO)
         hand.deal_card(Card.TWO)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -34,7 +34,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.SEVEN)
         hand.deal_card(Card.KING)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -46,7 +46,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.KING)
         hand.deal_card(Card.FIVE)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -58,7 +58,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.ACE)
         hand.deal_card(Card.KING)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -69,7 +69,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.SEVEN)
         hand.deal_card(Card.ACE)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -80,7 +80,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.ACE)
         hand.deal_card(Card.ACE)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -91,7 +91,7 @@ class TestHand(TestCase):
         hand.deal_card(Card.JACK)
         hand.deal_card(Card.ACE)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
 
@@ -103,6 +103,6 @@ class TestHand(TestCase):
         hand.deal_card(Card.ACE)
         hand.deal_card(Card.ACE)
         # Act
-        actual = hand.count_hand()
+        actual = hand.score_hand()
         # Assert
         assert actual == expected
