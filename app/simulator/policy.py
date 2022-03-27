@@ -33,8 +33,8 @@ class State(Enum):
     SCORE_IS_19 = 18
     SCORE_IS_20 = 19
     SCORE_IS_21 = 20
-    PLAYER_HAS_WON = 21
-    PLAYER_HAS_LOST = 22
+    PLAYER_HAS_LOST = 21
+    PLAYER_HAS_WON = 22
 
 
 def get_current_state_from_score(score: int) -> State:
