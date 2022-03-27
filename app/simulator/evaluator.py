@@ -1,8 +1,11 @@
+import numpy
+from numpy.typing import ArrayLike
+
 from app.game.Game import Game, EndGameState
-from app.simulator.policy import State, Action
+from app.simulator.policy import Action, get_current_state_from_score
 
 
-def evaluate_policy_table(q_table: dict):
+def evaluate_policy_table(q_table: ArrayLike):
     episodes = 1000
     game = Game()
 
@@ -14,8 +17,10 @@ def evaluate_policy_table(q_table: dict):
         game.new_round()
         while game.player.round_over is False:
             current_score = game.player.hand.score_hand()
-            actions = q_table[State(current_score)]
-            best_action = max(actions, key=lambda x: actions[x])
+            current_state = get_current_state_from_score(current_score)
+            actions = q_table[current_state.value]
+            best_action_index = numpy.argmax(actions)
+            best_action = Action(best_action_index)
 
             if best_action == Action.HIT:
                 game.player.hit()
