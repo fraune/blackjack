@@ -22,8 +22,8 @@ class Deck:
 
     def shuffle(self):
         for pazz in range(self._SHUFFLE_PASSES):
-            first = random.randint(0, len(self.cards))
-            second = random.randint(0, len(self.cards))
+            first = random.randint(0, len(self.cards)-1)
+            second = random.randint(0, len(self.cards)-1)
             aside = self.cards[first]
             self.cards[first] = self.cards[second]
             self.cards[second] = aside
