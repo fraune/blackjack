@@ -27,6 +27,10 @@ class Game:
         self.deck.shuffle()
         self.dealer.reset_round()
         self.player.reset_round()
+        self.dealer.deal_first_two_cards()
+        self.dealer.hit()
+        self.player.deal_first_two_cards()
+        # Player needs to make decisions
 
     def determine_winner(self):
         dealer_score = self.dealer.hand.score_hand()
