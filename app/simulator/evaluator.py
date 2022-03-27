@@ -19,7 +19,7 @@ def evaluate_policy_table(q_table: ArrayLike):
             current_score = game.player.hand.score_hand()
             current_state = get_current_state_from_score(current_score)
             actions = q_table[current_state.value]
-            best_action_index = numpy.argmax(actions)
+            best_action_index = numpy.argmax(actions)  # TODO: biased towards first action if the q_values are equal
             best_action = Action(best_action_index)
 
             if best_action == Action.HIT:
