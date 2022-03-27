@@ -30,12 +30,14 @@ class Game:
 
     def determine_winner(self):
         dealer_score = self.dealer.hand.score_hand()
-        player_score = self.dealer.hand.score_hand()
+        player_score = self.player.hand.score_hand()
 
         if dealer_score > 21 and player_score > 21:
+            # TODO: Fix dealer never busts
             return EndGameState.TIE
 
         if dealer_score > 21:
+            # TODO: Fix dealer never busts
             return EndGameState.PLAYER_WINS
 
         if player_score > 21:
