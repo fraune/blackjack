@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from app.Card import Pip, Card
-from app.Deck import Deck
-from app.Player import Player
+from app.game.Card import Pip, Card
+from app.game.Deck import Deck
+from app.game.Player import Player
 from app.utility.exceptions import RoundOverException
 
 

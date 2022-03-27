@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from app.Card import Pip, Card
-from app.Hand import Hand
+from app.game.Card import Pip, Card
+from app.game.Hand import Hand
 
 
 class TestHand(TestCase):

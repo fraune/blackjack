@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from app.Deck import Deck
+from app.game.Deck import Deck
 
 
 class TestDeck(TestCase):

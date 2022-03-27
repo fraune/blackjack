@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from app.Card import Pip
+from app.game.Card import Pip
 
 
 class TestPip(TestCase):

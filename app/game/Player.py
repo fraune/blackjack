@@ -1,5 +1,5 @@
-from app.Deck import Deck
-from app.Hand import Hand
+from app.game.Deck import Deck
+from app.game.Hand import Hand
 from app.utility.exceptions import RoundOverException
 
 

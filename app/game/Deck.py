@@ -1,6 +1,6 @@
 import random
 
-from app.Card import Pip, Card
+from app.game.Card import Pip, Card
 from app.utility.logging import v
 
 

@@ -1,4 +1,4 @@
-from app.Card import Card
+from app.game.Card import Card
 from app.utility.logging import v
 
 

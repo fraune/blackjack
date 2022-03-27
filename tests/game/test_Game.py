@@ -1,17 +1,17 @@
 from unittest.mock import Mock
 
-from app.Card import Pip, Card
-from app.Deck import Deck
-from app.Game import Game, EndGameState
+from app.game.Card import Pip, Card
+from app.game.Deck import Deck
+from app.game.Game import Game, EndGameState
 
 
 # def test_determine_winner_both_bust(mocker):
 #     # Arrange
 #     deck = Deck()
 #     deck.cards = [Card(Pip.TEN), Card(Pip.JACK), Card(Pip.QUEEN), Card(Pip.JACK), Card(Pip.TWO), Card(Pip.KING)]
-#     mocker.patch('app.Game.Deck', Mock(return_value=deck))
-#     mocker.patch('app.Deck.Deck.reset', Mock())
-#     mocker.patch('app.Deck.Deck.shuffle', Mock())
+#     mocker.patch('app.game.Game.Deck', Mock(return_value=deck))
+#     mocker.patch('app.game.Deck.Deck.reset', Mock())
+#     mocker.patch('app.game.Deck.Deck.shuffle', Mock())
 #
 #     # Act
 #     game = Game()
@@ -30,9 +30,9 @@ from app.Game import Game, EndGameState
 #     # Arrange
 #     deck = Deck()
 #     deck.cards = [Card(Pip.TEN), Card(Pip.JACK), Card(Pip.QUEEN), Card(Pip.JACK), Card(Pip.TWO), Card(Pip.KING)]
-#     mocker.patch('app.Game.Deck', Mock(return_value=deck))
-#     mocker.patch('app.Deck.Deck.reset', Mock())
-#     mocker.patch('app.Deck.Deck.shuffle', Mock())
+#     mocker.patch('app.game.Game.Deck', Mock(return_value=deck))
+#     mocker.patch('app.game.Deck.Deck.reset', Mock())
+#     mocker.patch('app.game.Deck.Deck.shuffle', Mock())
 #
 #     # Act
 #     game = Game()
@@ -49,9 +49,9 @@ def test_determine_winner_player_bust(mocker):
     # Arrange
     deck = Deck()
     deck.cards = [Card(Pip.TEN), Card(Pip.JACK), Card(Pip.QUEEN), Card(Pip.JACK), Card(Pip.TWO), Card(Pip.KING)]
-    mocker.patch('app.Game.Deck', Mock(return_value=deck))
-    mocker.patch('app.Deck.Deck.reset', Mock())
-    mocker.patch('app.Deck.Deck.shuffle', Mock())
+    mocker.patch('app.game.Game.Deck', Mock(return_value=deck))
+    mocker.patch('app.game.Deck.Deck.reset', Mock())
+    mocker.patch('app.game.Deck.Deck.shuffle', Mock())
 
     # Act
     game = Game()
@@ -68,9 +68,9 @@ def test_determine_winner_dealer_player_tie(mocker):
     # Arrange
     deck = Deck()
     deck.cards = [Card(Pip.TEN), Card(Pip.JACK), Card(Pip.TWO), Card(Pip.FIVE), Card(Pip.SEVEN), Card(Pip.KING)]
-    mocker.patch('app.Game.Deck', Mock(return_value=deck))
-    mocker.patch('app.Deck.Deck.reset', Mock())
-    mocker.patch('app.Deck.Deck.shuffle', Mock())
+    mocker.patch('app.game.Game.Deck', Mock(return_value=deck))
+    mocker.patch('app.game.Deck.Deck.reset', Mock())
+    mocker.patch('app.game.Deck.Deck.shuffle', Mock())
 
     # Act
     game = Game()
@@ -87,9 +87,9 @@ def test_determine_winner_player_lower(mocker):
     # Arrange
     deck = Deck()
     deck.cards = [Card(Pip.TEN), Card(Pip.JACK), Card(Pip.TWO), Card(Pip.FIVE), Card(Pip.NINE), Card(Pip.KING)]
-    mocker.patch('app.Game.Deck', Mock(return_value=deck))
-    mocker.patch('app.Deck.Deck.reset', Mock())
-    mocker.patch('app.Deck.Deck.shuffle', Mock())
+    mocker.patch('app.game.Game.Deck', Mock(return_value=deck))
+    mocker.patch('app.game.Deck.Deck.reset', Mock())
+    mocker.patch('app.game.Deck.Deck.shuffle', Mock())
 
     # Act
     game = Game()
@@ -107,9 +107,9 @@ def test_determine_winner_dealer_lower(mocker):
     # Arrange
     deck = Deck()
     deck.cards = [Card(Pip.TEN), Card(Pip.JACK), Card(Pip.FOUR), Card(Pip.FIVE), Card(Pip.SEVEN), Card(Pip.KING)]
-    mocker.patch('app.Game.Deck', Mock(return_value=deck))
-    mocker.patch('app.Deck.Deck.reset', Mock())
-    mocker.patch('app.Deck.Deck.shuffle', Mock())
+    mocker.patch('app.game.Game.Deck', Mock(return_value=deck))
+    mocker.patch('app.game.Deck.Deck.reset', Mock())
+    mocker.patch('app.game.Deck.Deck.shuffle', Mock())
 
     # Act
     game = Game()

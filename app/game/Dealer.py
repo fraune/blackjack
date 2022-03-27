@@ -1,6 +1,6 @@
 import copy
 
-from app.Player import Player
+from app.game.Player import Player
 from app.utility.logging import w
 
 

@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from app.Card import Card, Pip
-from app.Dealer import Dealer
-from app.Deck import Deck
+from app.game.Card import Card, Pip
+from app.game.Dealer import Dealer
+from app.game.Deck import Deck
 
 
 class TestDealer(TestCase):

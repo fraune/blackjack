@@ -1,8 +1,8 @@
 from enum import Enum
 
-from app.Dealer import Dealer
-from app.Deck import Deck
-from app.Player import Player
+from app.game.Dealer import Dealer
+from app.game.Deck import Deck
+from app.game.Player import Player
 from app.utility.exceptions import UnknownGameStateException
 
 
