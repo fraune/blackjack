@@ -40,5 +40,4 @@ class State(Enum):
 def get_current_state_from_score(score: int) -> State:
     if 1 <= score <= 21:
         return State(score - 1)
-    else:
-        raise ValueError(f'A State was not derived from the following score: {score}')
+    raise ValueError(f'A State was not derived from the following score: {score}')
