@@ -6,7 +6,7 @@ q-table or rewards table. Don't modify these numbers.
 """
 
 
-class Action(Enum):
+class Action(int, Enum):
     HIT = 0
     STAND = 1
 
