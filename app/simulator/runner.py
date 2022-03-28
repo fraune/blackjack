@@ -22,3 +22,5 @@ if LEARN:
     q_table = optimize_policy()
     policy = construct_policy(q_table)
     save_policy(policy)
+
+i('Program complete')
