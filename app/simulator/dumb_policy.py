@@ -1,10 +1,10 @@
 from app.simulator.policy import Action
 
 """
-Results of this policy table after 1000 episodes (dealer cheats)
-  player losses = 244
-  player wins   = 288
-  player ties   = 468
+Results of this policy table after 100,000 episodes (dealer cheats)
+  player losses = 24948
+  player wins   = 26786
+  player ties   = 48266
 """
 
 human_created_policy_table = [
