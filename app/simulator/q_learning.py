@@ -49,7 +49,7 @@ def optimize_policy() -> ArrayLike:
       The value in the cells is equal to the q-value.
     """
     q_table = numpy.zeros((len(State), len(Action)))
-    episodes = 10000
+    episodes = 100000
     game = Game()
 
     for i in range(episodes):
