@@ -3,7 +3,7 @@ import random
 import numpy
 from numpy.typing import ArrayLike
 
-from app.game.Game import Game
+from app.game.Game import Game, EndGameState
 from app.simulator.policy import State, Action, get_current_state_from_score
 
 """
@@ -19,7 +19,7 @@ def determine_reward(state: State) -> int:
         return state.value + 1
     if state == State.PLAYER_HAS_LOST:
         return -1000
-    if state.value == State.PLAYER_HAS_WON:
+    if state == State.PLAYER_HAS_WON:
         return 1000
     raise ValueError(f'A reward was not determined from the following State: {state}')
 
@@ -66,7 +66,13 @@ def optimize_policy() -> ArrayLike:
                     raise ValueError(f'Unknown Action: {action}')
 
             if game.player.round_over:
-                next_state = game.determine_winner()
+                match game.determine_winner():
+                    case EndGameState.DEALER_WINS:
+                        next_state = State.PLAYER_HAS_LOST
+                    case EndGameState.PLAYER_WINS:
+                        next_state = State.PLAYER_HAS_WON
+                    case _:
+                        next_state = get_current_state_from_score(game.player.hand.score_hand())
             else:
                 next_state = get_current_state_from_score(game.player.hand.score_hand())
             reward = determine_reward(next_state)
