@@ -3,7 +3,7 @@ from app.simulator.policy import Action, get_current_state_from_score
 
 
 def evaluate_policy_table(policy_table: list[Action]):
-    episodes = 1000
+    episodes = 100000
     game = Game()
 
     player_lost = 0
