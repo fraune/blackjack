@@ -11,7 +11,7 @@ Policy table evaluation
 """
 if EVALUATE:
     i('Evaluating a policy')
-    policy = load_policy('policy_1648428252.json')
+    policy = load_policy('policy_1648429480.json')
     evaluate_policy_table(policy)
 
 """
