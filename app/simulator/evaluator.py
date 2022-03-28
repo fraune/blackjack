@@ -17,10 +17,13 @@ def evaluate_policy_table(policy_table: list[Action]):
             current_state = get_current_state_from_score(current_score)
             action = policy_table[current_state.value]
 
-            if action == Action.HIT:
-                game.player.hit()
-            else:
-                game.player.stand()
+            match action:
+                case Action.HIT:
+                    game.player.hit()
+                case Action.STAND:
+                    game.player.stand()
+                case _:
+                    raise ValueError(f'Unknown Action: {action}')
 
         match game.determine_winner():
             case EndGameState.DEALER_WINS:
